@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kheng rathanavortey</title>
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      background: #ffffff;
+      color: #111827;
+    }
+
+    /* =========================
+           HEADER
+        ========================== */
+
+    header {
+      height: 74px;
+      width: 100%;
+      border-bottom: 1px solid #e5e7eb;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      background: #fff;
+    }
+
+    .navbar {
+      width: 100%;
+      max-width: 1420px;
+      margin: auto;
+      padding: 0 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* Logo */
+
+    .logo {
+      width: 145px;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo-map {
+      position: absolute;
+      width: 58px;
+      height: 48px;
+      background: #9b9b9b;
+      left: 4px;
+      top: 7px;
+      clip-path: polygon(12% 12%,
+          35% 8%,
+          49% 15%,
+          66% 7%,
+          91% 16%,
+          86% 37%,
+          94% 55%,
+          79% 65%,
+          82% 88%,
+          53% 92%,
+          39% 81%,
+          18% 89%,
+          7% 66%,
+          15% 48%,
+          5% 30%);
+    }
+
+
+    /* =========================
+           NAVIGATION
+        ========================== */
+
+    .nav-center {
+      display: flex;
+      align-items: center;
+      gap: 42px;
+      margin-left: 110px;
+    }
+
+    .nav-item {
+      background: white;
+      padding: 9px 17px;
+      text-decoration: none;
+      color: #374151;
+      font-size: 16px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: .2s;
+    }
+
+    .nav-item:hover {
+      color: #f15b40;
+      background-color: rgb(240, 240, 240);
+      border-radius: 25px 25px;
+    }
+
+    .recaps {
+      background: white;
+      padding: 9px 17px;
+      text-decoration: none;
+      color: #374151;
+      font-size: 16px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: .2s;
+    }
+
+    .recaps:hover {
+      color: #f15b40;
+      background-color: rgb(241, 241, 241);
+      border-radius: 25px 25px;
+    }
+
+    .nav-item i {
+      font-size: 16px;
+    }
+
+    /* =========================
+           RIGHT SIDE
+        ========================== */
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .language {
+      height: 36px;
+      display: flex;
+      align-items: center;
+      border: 1px solid #d9dee5;
+      border-radius: 20px;
+      overflow: hidden;
+      font-size: 13px;
+    }
+
+    .language .english {
+      background: #54bfd3;
+      color: white;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 16px;
+    }
+
+    .language .khmer {
+      background: #fff;
+      color: #4b5563;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+    }
+
+    .log {
+      color: #374151;
+      background: white;
+      padding: 9px 17px;
+      text-decoration: none;
+      transition: .2s;
+    }
+    .log:hover{
+      background-color: rgb(241, 240, 240);
+      border-radius: 25px 25px;
+    }
+
+    .sign {
+      background: #f15b40;
+      border-radius: 9px;
+      padding: 9px 17px;
+      color: white  ;
+      text-decoration: none;
+      transition: .2s;
+    }
+    .sign:hover{
+      background-color: #f15b40 ;
+      border-radius: 25px 25px;
+    }
+
+    /* =========================
+           LOGIN SECTION
+        ========================== */
+
+    .login-page {
+      width: 100%;
+      min-height: calc(100vh - 74px);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .login-container {
+      width: 340px;
+      margin-top: 60px;
+    }
+
+    .login-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 800;
+      font-style: italic;
+      color: #080808;
+      letter-spacing: -1.3px;
+      margin-bottom: 12px;
+    }
+
+    .login-subtitle {
+      text-align: center;
+      color: #7a8190;
+      font-size: 17px;
+      margin-bottom: 42px;
+    }
+
+    /* =========================
+           FORM
+        ========================== */
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 16px;
+      color: #111111;
+      font-weight: 500;
+      margin-bottom: 11px;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #7a7f8a;
+      font-size: 20px;
+      pointer-events: none;
+    }
+
+    .form-input {
+      width: 100%;
+      height: 44px;
+      border: 1px solid #dfe1e5;
+      border-radius: 11px;
+      padding: 0 15px 0 48px;
+      font-family: inherit;
+      font-size: 15px;
+      color: #4b5563;
+      outline: none;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      transition: 0.2s ease;
+    }
+
+    .form-input::placeholder {
+      color: #8a8f9d;
+    }
+
+    .form-input:focus {
+      border-color: #54bfd3;
+      box-shadow: 0 0 0 3px rgba(84, 191, 211, 0.12);
+    }
+
+    /* =========================
+           FORGOT PASSWORD
+        ========================== */
+
+    .forgot-password {
+      display: block;
+      color: #111827;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      margin-top: 35px;
+      margin-bottom: 26px;
+    }
+
+    .forgot-password:hover {
+      color: #54bfd3;
+    }
+
+    /* =========================
+           SIGN IN BUTTON
+        ========================== */
+
+    .signin-btn {
+      width: 100%;
+      height: 53px;
+      border: none;
+      border-radius: 11px;
+      background: #51bdd3;
+      color: white;
+      font-family: inherit;
+      font-size: 17px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 11px;
+      transition: 0.2s ease;
+    }
+
+    .signin-btn:hover {
+      background: #42b3ca;
+    }
+
+    .signin-btn i {
+      font-size: 17px;
+    }
+
+    /* =========================
+           DIVIDER
+        ========================== */
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 42px 0 40px;
+      color: #818795;
+      font-size: 16px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      height: 1px;
+      background: #d9dde3;
+      flex: 1;
+    }
+
+    .divider span {
+      white-space: nowrap;
+    }
+
+    /* =========================
+           GOOGLE BUTTON
+        ========================== */
+
+    .google-btn {
+      width: 100%;
+      height: 54px;
+      background: white;
+      border: 1px solid #dfe1e5;
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      color: #171717;
+      font-family: inherit;
+      font-size: 17px;
+      cursor: pointer;
+      transition: 0.2s ease;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+    }
+
+    .google-btn:hover {
+      background: #fafafa;
+      border-color: #c9cdd3;
+    }
+
+    .google-icon {
+      font-size: 18px;
+      font-weight: 700;
+      color: #4285f4;
+    }
+
+    /* =========================
+           SIGN UP TEXT
+        ========================== */
+
+    .signup-text {
+      text-align: center;
+      margin-top: 40px;
+      color: #7b8190;
+      font-size: 15px;
+    }
+
+    .signup-text a {
+      color: #111827;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .signup-text a:hover {
+      color: #f15b40;
+    }
+
+    /* =========================
+           RESPONSIVE
+        ========================== */
+
+    @media (max-width: 900px) {
+
+      .nav-center {
+        margin-left: 0;
+        gap: 20px;
+      }
+
+      .nav-item {
+        font-size: 14px;
+      }
+
+      .navbar {
+        padding: 0 18px;
+      }
+    }
+
+    @media (max-width: 700px) {
+
+      header {
+        height: auto;
+        min-height: 70px;
+      }
+
+      .navbar {
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 10px 18px;
+      }
+
+      .nav-center {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        padding-bottom: 5px;
+      }
+
+      .nav-right {
+        margin-left: auto;
+      }
+
+      .login-container {
+        width: calc(100% - 40px);
+        max-width: 340px;
+        margin-top: 45px;
+      }
+
+      .login-title {
+        font-size: 28px;
+      }
+
+      .login-subtitle {
+        font-size: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .logo {
+        transform: scale(0.9);
+        transform-origin: left center;
+      }
+
+      .nav-right {
+        gap: 6px;
+      }
+
+      .language {
+        display: none;
+      }
+
+      .login-btn,
+      .signup-btn {
+        padding: 9px 12px;
+        font-size: 13px;
+      }
+
+      .nav-center {
+        gap: 15px;
+      }
+
+      .nav-item {
+        font-size: 12px;
+      }
+
+      .login-container {
+        margin-top: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+         HEADER
+    ========================== -->
+
+  <header>
+    <nav class="navbar">
+
+      <!-- Logo -->
+      <a href="Final Project 1.html" class="logo">
+        <img src="./runbodia.webp" style="width: 85px;">
+      </a>
+
+      <!-- Navigation -->
+      <div class="nav-center">
+
+        <a href="vith.html" class="nav-item active">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+          <span>Latest</span>
+        </a>
+
+        <a href="sinhoun.html" class="nav-item">
+          <i class="fa-solid fa-compass"></i>
+          <span>Browse Events</span>
+        </a>
+
+        <a href="Rach.html" class="recaps">
+          <i class="fa-solid fa-trophy"></i>
+          <span>Recaps</span>
+        </a>
+
+      </div>
+
+      <!-- Right Navigation -->
+      <div class="nav-right">
+
+        <div class="language">
+          <span class="english">EN</span>
+          <span class="khmer">ខ្មែរ</span>
+        </div>
+
+        <div class="login">
+          <a href="votey.html" class="log">
+            Login
+          </a>
+        </div>
+
+        <div class="signup">
+          <a href="houyya.html" class="sign">sign up</a>
+        </div>
+
+      </div>
+
+    </nav>
+  </header>
+
+
+  <!-- =========================
+         LOGIN PAGE
+    ========================== -->
+
+  <main class="login-page">
+
+    <div class="login-container">
+
+      <h1 class="login-title">
+        WELCOME BACK
+      </h1>
+
+      <p class="login-subtitle">
+        Sign in to access your results and profile
+      </p>
+
+
+      <!-- Email -->
+      <div class="form-group">
+
+        <label class="form-label">
+          Email Address
+        </label>
+
+        <div class="input-wrapper">
+
+          <i class="fa-regular fa-envelope input-icon"></i>
+
+          <input type="email" class="form-input" placeholder="you@example.com">
+
+        </div>
+
+      </div>
+
+
+      <!-- Password -->
+      <div class="form-group">
+
+        <label class="form-label">
+          Password
+        </label>
+
+        <div class="input-wrapper">
+
+          <i class="fa-solid fa-lock input-icon"></i>
+
+          <input type="password" class="form-input" placeholder="........">
+
+        </div>
+
+      </div>
+
+
+      <!-- Forgot Password -->
+      <a href="#" class="forgot-password">
+        Forgot password?
+      </a>
+
+
+      <!-- Sign In -->
+      <button class="signin-btn">
+        <i class="fa-regular fa-circle-check"></i>
+        <span>Sign In</span>
+      </button>
+
+
+      <!-- Divider -->
+      <div class="divider">
+        <span>or continue with</span>
+      </div>
+
+
+      <!-- Google -->
+      <button class="google-btn">
+
+        <span class="google-icon">G</span>
+
+        <span>Google</span>
+
+      </button>
+
+
+      <!-- Sign Up -->
+      <p class="signup-text">
+        Don't have an account?
+        <a href="#">Sign Up</a>
+      </p>
+
+    </div>
+
+  </main>
+
+
+  <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+  <script>
+
+    // Simple sign-in button example
+    document.querySelector(".signin-btn").addEventListener("click", function () {
+
+      const email = document.querySelector('input[type="email"]').value;
+      const password = document.querySelector('input[type="password"]').value;
+
+      if (!email || !password) {
+        alert("Please enter your email and password.");
+        return;
+      }
+
+      alert("Sign in clicked!");
+
+    });
+
+  </script>
+
+</body>
+
+</html>
