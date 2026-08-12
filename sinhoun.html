@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Then sinhoun</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet"
+    >
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #fdfcf9;
+            color: #202020;
+        }
+
+        button,
+        input,
+        select {
+            font-family: inherit;
+        }
+
+        .navbar {
+            height: 62px;
+            background: #ffffff;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #e6e6e6;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-container {
+            width: 100%;
+            padding-left: 50px;
+            max-width: 1135px;
+            height: 100%;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+        }
+
+        /* Logo */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            width: 180px;
+        }
+
+        /* Navigation links */
+
+        .nav-links {
+            height: 100%;
+            padding-left: 125px;
+            display: flex;
+            align-items: center; 
+        }
+
+        .nav-link {
+            background: white;
+            padding: 9px 17px;
+            height: 34px;
+            padding: 0 15px;
+
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            border-radius: 9px;
+
+            color: #343434;
+            text-decoration: none;
+
+            font-size: 13px;
+            font-weight: 500;
+
+            transition: .2s ease;
+        }
+        .nav-link:hover{
+            background-color: rgb(240, 239, 239);
+            border-radius: 25px 25px;
+
+        }
+
+        .nav-link i {
+            font-size: 13px;
+        }
+
+        .nav-link.latest {
+            background: white;
+            padding: 9px 17px;
+            color: #ff6845;
+        }
+        .nav-link.latest:hover{
+            background-color: rgb(244, 241, 241);
+            border-radius: 25px 25px;
+
+        }
+        .nav-link:hover {
+            color: #ff6845;
+        }
+
+        .nav-link.active {
+            background: #ff6845;
+            color: #ffffff;
+            font-weight: 600;
+            
+        }
+
+        .nav-link.active:hover {
+            color: #ffffff;
+            background: #f35c39;
+        }
+
+        .nav-right {
+            margin-left: auto;
+
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .language {
+            height: 29px;
+            border: 1px solid #d4dce4;
+            border-radius: 20px;
+
+            display: flex;
+            overflow: hidden;
+        }
+
+        .language span {
+            min-width: 39px;
+            padding: 5px 9px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 11px;
+            color: #444;
+        }
+
+        .language .active-language {
+            background: #55bfd4;
+            color: #fff;
+        }
+
+        .login {
+            background: white;
+            padding: 9px 17px;
+            text-decoration: none;
+            color: #303030;
+            font-size: 13px;
+        }
+        .login:hover{
+            background-color: rgb(240, 239, 239);
+            border-radius: 25px 25px;
+        }
+        .signup {
+            text-decoration: none;
+            color: #fff;
+            background: #ff6845;
+
+            padding: 7px 15px;
+            border-radius: 8px;
+
+            font-size: 12px;
+            font-weight: 600;
+            transition: .2s;
+        }
+        .signup:hover{
+            background-color: #ff6845;
+            border-radius:20px 20px;
+        }
+
+        .page {
+            width: 100%;
+            max-width: 1135px;
+            margin: 0 auto;
+            padding: 34px 0 50px;
+        }
+
+        .page-title {
+            font-size: 52px;
+            line-height: 1.05;
+
+            font-weight: 900;
+            font-style: italic;
+
+            letter-spacing: -2px;
+            text-transform: uppercase;
+
+            color: #403b3c;
+        }
+
+        .page-title .orange {
+            color: #ff6744;
+        }
+
+        .page-subtitle {
+            margin-top: 13px;
+
+            color: #8ba2bd;
+            font-size: 15px;
+            font-weight: 400;
+        }
+        .divider {
+            height: 1px;
+            background: #ece9e4;
+            margin-top: 33px;
+        }
+        .filter-box {
+            margin-top: 0;
+
+            min-height: 90px;
+
+            border: 1px solid #ced7e1;
+            border-radius: 14px;
+
+            background: #ffffff;
+
+            padding: 22px;
+
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .search-wrapper {
+            height: 44px;
+            flex: 1;
+
+            border: 1px solid #cdd6e0;
+            border-radius: 9px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 13px;
+        }
+
+        .search-wrapper i {
+            color: #727b88;
+            font-size: 15px;
+            margin-right: 11px;
+        }
+
+        .search-wrapper input {
+            border: none;
+            outline: none;
+
+            width: 100%;
+
+            font-size: 12px;
+            color: #333;
+
+            background: transparent;
+        }
+
+        .search-wrapper input::placeholder {
+            color: #858994;
+        }
+        .category-select {
+            height: 44px;
+            width: 187px;
+
+            border: 1px solid #d8dce2;
+            border-radius: 9px;
+
+            background: #fff;
+
+            padding: 0 13px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            color: #767b85;
+            font-size: 12px;
+
+            cursor: pointer;
+
+            box-shadow: 0 1px 4px rgba(0,0,0,.04);
+        }
+
+        .category-select i {
+            font-size: 11px;
+        }
+
+        .date-button {
+            height: 44px;
+            width: 87px;
+
+            border: 1px solid #cbd5df;
+            border-radius: 9px;
+
+            background: #fff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+
+            color: #242424;
+            font-size: 12px;
+
+            cursor: pointer;
+        }
+
+        .date-button i {
+            font-size: 16px;
+        }
+
+        .date-button:hover,
+        .category-select:hover {
+            border-color: #ff6845;
+        }
+
+        .events-grid {
+            margin-top: 44px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 268px);
+            column-gap: 22px;
+
+            align-items: start;
+        }
+
+
+        .event-card {
+            width: 268px;
+        }
+
+        .event-image {
+            width: 268px;
+            height: 269px;
+
+            object-fit: cover;
+
+            display: block;
+
+            background: #ddd;
+        }
+
+        /* Status */
+
+        .image-wrapper {
+            position: relative;
+            width: 268px;
+            height: 269px;
+        }
+
+        .status {
+            position: absolute;
+
+            left: 8px;
+            top: 8px;
+
+            background: rgba(15,15,15,.85);
+
+            color: #fff;
+
+            border-radius: 7px;
+
+            padding: 4px 9px;
+
+            font-size: 10px;
+            font-weight: 600;
+
+            z-index: 2;
+        }
+
+        .status i {
+            margin-right: 4px;
+        }
+
+        /* Event information */
+
+        .event-date {
+            margin-top: 9px;
+
+            display: flex;
+            align-items: center;
+
+            color: #333;
+
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .event-date i {
+            color: #536cff;
+            margin-right: 6px;
+            font-size: 12px;
+        }
+
+        .event-title {
+            margin-top: 6px;
+
+            font-size: 16px;
+            font-weight: 700;
+
+            color: #171717;
+        }
+
+        .event-location {
+            margin-top: 5px;
+
+            display: flex;
+            align-items: flex-start;
+
+            color: #242424;
+
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .event-location i {
+            color: #ec4268;
+            margin-right: 7px;
+            margin-top: 3px;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+
+            margin-top: 6px;
+        }
+
+        .tag {
+            padding: 3px 9px;
+
+            border: 1px solid #111;
+            border-radius: 12px;
+
+            color: #222;
+
+            font-size: 10px;
+            line-height: 1.3;
+
+            background: #fff;
+        }
+
+        .details {
+            display: inline-block;
+
+            margin-top: 31px;
+
+            color: #151515;
+            text-decoration: none;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            border-bottom: 2px solid #151515;
+            padding-bottom: 4px;
+        }
+
+        .details:hover {
+            color: #ff6845;
+            border-color: #ff6845;
+        }
+
+        .no-events {
+            margin-top: 82px;
+
+            text-align: center;
+
+            color: #9b9da5;
+
+            font-size: 13px;
+        }
+
+        @media (max-width: 1200px) {
+
+            .nav-container,
+            .page {
+                max-width: calc(100% - 50px);
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            .nav-container {
+                max-width: calc(100% - 30px);
+            }
+
+            .page {
+                max-width: calc(100% - 40px);
+            }
+
+            .page-title {
+                font-size: 43px;
+            }
+
+            .events-grid {
+                grid-template-columns: repeat(2, 268px);
+                row-gap: 45px;
+            }
+
+            .nav-links {
+                gap: 0;
+            }
+
+            .logo {
+                width: 140px;
+            }
+
+            .nav-right {
+                gap: 12px;
+            }
+        }
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                height: auto;
+                padding: 10px 0;
+            }
+
+            .nav-container {
+                flex-wrap: wrap;
+            }
+
+            .logo {
+                width: auto;
+            }
+
+            .nav-links {
+                background: white;
+                padding: 9px 17px;
+                order: 3;
+                width: 100%;
+                justify-content: center;
+                margin-top: 8px;
+            }
+            .nav-links:hover{
+                color: orange;
+                background-color:rgb(243, 239, 239) ;
+            }
+            .nav-right {
+                margin-left: auto;
+            }
+
+            .login {
+                display: none;
+            }
+
+            .page {
+                padding-top: 25px;
+            }
+
+            .page-title {
+                font-size: 36px;
+            }
+
+            .page-subtitle {
+                font-size: 13px;
+                line-height: 1.6;
+            }
+
+            .filter-box {
+                flex-direction: column;
+                align-items: stretch;
+                padding: 15px;
+            }
+
+            .search-wrapper,
+            .category-select,
+            .date-button {
+                width: 100%;
+            }
+
+            .events-grid {
+                grid-template-columns: 1fr;
+                justify-items: center;
+            }
+
+            .no-events {
+                margin-top: 55px;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            .nav-right .language {
+                display: none;
+            }
+
+            .page {
+                max-width: calc(100% - 30px);
+            }
+
+            .page-title {
+                font-size: 30px;
+            }
+
+            .nav-link {
+                padding: 0 8px;
+                font-size: 11px;
+            }
+
+            .nav-link i {
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="./Final Project 1.html" class="logo">
+
+                <div class="logo-name">
+                    <img src="./runbodia.webp" style="width: 95px;"">
+                </div>
+
+            </a>
+
+
+            <nav class="nav-links">
+
+                <a href="./vith.html" class="nav-link latest">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    Latest
+                </a>
+
+                <a href="#" class="nav-link active">
+                    <i class="fa-solid fa-compass"></i>
+                    Browse Events
+                </a>
+                 <a href="Rach.html" class="nav-link">
+                    <i class="fa-solid fa-trophy"></i>
+                    Recaps
+                </a>
+            </nav>
+
+            <div class="nav-right">
+
+                <div class="language">
+
+                    <span class="active-language">
+                        EN
+                    </span>
+
+                    <span>
+                        ខ្មែរ
+                    </span>
+
+                </div>
+
+                <a href="./votey.html" class="login">
+                    Login
+                </a>
+
+                <a href="houyya.html" class="signup">
+                    Sign up
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <main class="page">
+
+
+        <!-- Title -->
+
+        <h1 class="page-title">
+            DISCOVER
+            <span class="orange">INCREDIBLE</span>
+            EVENTS
+        </h1>
+
+        <p class="page-subtitle">
+            Explore concerts, festivals, sports, conferences, and community
+            events happening near you.
+        </p>
+
+
+        <!-- Divider -->
+
+        <div class="divider"></div>
+
+        <section class="filter-box">
+
+
+            <!-- Search -->
+
+            <div class="search-wrapper">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search events..."
+                >
+
+            </div>
+
+
+            <!-- Category -->
+
+            <button class="category-select" id="categoryButton">
+
+                <span id="categoryText">
+                    Category
+                </span>
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </button>
+
+
+            <!-- Date -->
+
+            <button class="date-button">
+
+                <i class="fa-regular fa-calendar"></i>
+
+                Date
+
+            </button>
+
+
+        </section>
+
+
+        <section class="events-grid" id="eventsGrid">
+
+            <article
+                class="event-card"
+                data-title="The Grey 5K"
+                data-category="Fun Run"
+            >
+
+                <div class="image-wrapper">
+
+                    <span class="status">
+                        <i class="fa-solid fa-lock"></i>
+                        Closed
+                    </span>
+
+                    <!-- Replace with your image -->
+                    <img
+                        class="event-image"
+                        src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=600&q=85"
+                        alt="The Grey 5K"
+                    >
+
+                </div>
+
+
+                <div class="event-date">
+
+                    <i class="fa-regular fa-calendar-days"></i>
+
+                    May 23, 2026 · 5:30 AM–9:30 AM
+
+                </div>
+
+
+                <h2 class="event-title">
+                    The Grey 5K
+                </h2>
+
+
+                <div class="event-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span>
+                        Chip Mong 271, Norodom Blvd,<br>
+                        Phnom Penh
+                    </span>
+
+                </div>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Fun Run
+                    </span>
+
+                </div>
+
+
+                <a href="#" class="details">
+                    More Details
+                </a>
+
+            </article>
+
+            <article
+                class="event-card"
+                data-title="Women's day run"
+                data-category="Fun Run - 3KM"
+            >
+
+                <div class="image-wrapper">
+
+                    <span class="status">
+                        <i class="fa-solid fa-lock"></i>
+                        Closed
+                    </span>
+
+                    <img
+                        class="event-image"
+                        src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?auto=format&fit=crop&w=600&q=85"
+                        alt="Women's day run"
+                    >
+
+                </div>
+
+
+                <div class="event-date">
+
+                    <i class="fa-regular fa-calendar-days"></i>
+
+                    Mar 7, 2026 · 6:00 AM–6:00 PM
+
+                </div>
+
+
+                <h2 class="event-title">
+                    Women's day run
+                </h2>
+
+
+                <div class="event-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span>
+                        Koh Norea, Phnom Penh
+                    </span>
+
+                </div>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Fun Run - 3KM
+                    </span>
+
+                    <span class="tag">
+                        Road Race
+                    </span>
+
+                </div>
+
+
+                <a href="#" class="details">
+                    More Details
+                </a>
+
+            </article>
+            <article
+                class="event-card"
+                data-title="Now is your run"
+                data-category="Fun Run - 4KM"
+            >
+
+                <div class="image-wrapper">
+
+                    <span class="status">
+                        <i class="fa-solid fa-lock"></i>
+                        Closed
+                    </span>
+
+                    <img
+                        class="event-image"
+                        src="https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=600&q=85"
+                        alt="Now is your run"
+                    >
+
+                </div>
+
+
+                <div class="event-date">
+
+                    <i class="fa-regular fa-calendar-days"></i>
+
+                    Apr 25, 2026 · 6:00 AM–6:00 PM
+
+                </div>
+
+
+                <h2 class="event-title">
+                    Now is your run
+                </h2>
+
+
+                <div class="event-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <span>
+                        Koh Norea
+                    </span>
+
+                </div>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+                        Fun Run - 4KM
+                    </span>
+
+                    <span class="tag">
+                        Road Race
+                    </span>
+
+                </div>
+
+
+                <a href="#" class="details">
+                    More Details
+                </a>
+
+            </article>
+
+
+        </section>
+
+
+        <!-- No events -->
+
+        <div class="no-events" id="noEvents">
+            No more events to show
+        </div>
+
+
+    </main>
+    <script>
+
+        const searchInput =
+            document.getElementById("searchInput");
+
+        const eventsGrid =
+            document.getElementById("eventsGrid");
+
+        const noEvents =
+            document.getElementById("noEvents");
+
+        const eventCards =
+            document.querySelectorAll(".event-card");
+
+        searchInput.addEventListener("input", function () {
+
+            const searchValue =
+                this.value.toLowerCase().trim();
+
+            let visibleEvents = 0;
+
+
+            eventCards.forEach(function (card) {
+
+                const title =
+                    card.dataset.title.toLowerCase();
+
+                const category =
+                    card.dataset.category.toLowerCase();
+
+
+                if (
+                    title.includes(searchValue) ||
+                    category.includes(searchValue)
+                ) {
+
+                    card.style.display = "block";
+
+                    visibleEvents++;
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+            if (visibleEvents === 0) {
+
+                noEvents.textContent =
+                    "No events found";
+
+            } else {
+
+                noEvents.textContent =
+                    "No more events to show";
+
+            }
+
+        });
+        document
+            .getElementById("categoryButton")
+            .addEventListener("click", function () {
+
+                alert(
+                    "Category filter clicked"
+                );
+
+            });
+        document
+            .querySelector(".date-button")
+            .addEventListener("click", function () {
+
+                alert(
+                    "Date filter clicked"
+                );
+
+            });
+
+    </script>
+
+</body>
+</html>
