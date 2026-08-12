@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Seam sovanchanravith</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            background: #fdfcf9;
+            color: #171717;
+        }
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            height: 64px;
+            background: #fff;
+            border-top: 3px solid #333;
+            border-bottom: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .container{
+            padding-left: 100px;
+        }
+
+        .navbar {
+            max-width: 1240px;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 88px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .nav-center {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: 100px;
+        }
+
+        .nav-item {
+          background: white;
+            height: 36px;
+            padding: 9px 17px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: #4b4b55;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: .2s;
+        }
+        .nav-item:hover{
+          background-color: rgb(240, 240, 240);
+          border-radius: 25px 25px;
+        }
+
+        .recaps {
+            background: white;
+            padding: 9px 17px;
+            color: #374151;
+            text-decoration: none;
+            font-size: 15px;
+            transition: .2s;
+            font-size: 14px;
+        }
+        .recaps:hover{
+          background-color:rgb(240, 240, 240) ;
+          border-radius: 25px 25px;
+        }
+
+        .nav-item.active {
+          border-radius: 10px 10px;
+          background: #ff6544;
+          color: #fff;
+          font-weight: 600;
+        }
+        .nav-item.active:hover{
+          background-color:#ff6544 ;
+          border-radius: 25px 25px;
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .language {
+            height: 31px;
+            display: flex;
+            align-items: center;
+            border: 1px solid #d5d9df;
+            border-radius: 18px;
+            overflow: hidden;
+            font-size: 12px;
+        }
+
+        .language .active-lang {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            background: #4dc1d5;
+            color: white;
+            font-weight: 700;
+        }
+
+        .language .other-lang {
+            padding: 0 11px;
+            color: #555;
+        }
+
+        .login {
+          background: white;
+          padding: 9px 17px;
+          text-decoration: none;
+          color: #41414a;
+          font-size: 14px;
+          transition: .2s;
+        }
+        .login:hover{
+          background-color:rgb(240, 240, 240) ;
+          border-radius: 25px 25px;
+        }
+
+        .signup {
+            background: #ff6544;
+            color: white;
+            text-decoration: none;
+            padding: 9px 16px;
+            border-radius: 9px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .2s;
+        }
+        .signup:hover{
+          background-color: #ff6544;
+          border-radius: 25px 25px;
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 38px 0 80px;
+        }
+
+        .page-title {
+            text-align: center;
+        }
+
+        .page-title h1 {
+            font-size: 27px;
+            font-style: italic;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        .title-line {
+            width: 60px;
+            height: 4px;
+            background: #ff8a00;
+            border-radius: 5px;
+            margin: 0 auto 10px;
+        }
+
+        .page-title p {
+            color: #85858e;
+            font-size: 13px;
+            margin-top: 7px;
+        }
+
+
+        /* =========================
+           EVENT GRID
+        ========================= */
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 23px;
+            margin-top: 25px;
+        }
+
+        .event-card {
+            min-width: 0;
+        }
+
+        .event-image {
+            width: 100%;
+            height: 382px;
+            position: relative;
+            overflow: hidden;
+            background: #ddd;
+        }
+
+        .event-image img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        .closed-badge {
+            position: absolute;
+            top: 9px;
+            left: 9px;
+            background: #1e1c1e;
+            color: white;
+            padding: 5px 11px;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0,0,0,.25);
+        }
+
+        .closed-badge i {
+            font-size: 11px;
+        }
+
+
+        /* =========================
+           EVENT DETAILS
+        ========================= */
+
+        .event-info {
+            padding-top: 9px;
+        }
+
+        .event-date {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #3e3e44;
+            font-size: 13px;
+            margin-bottom: 9px;
+        }
+
+        .calendar-icon {
+            color: #4b8ff7;
+            font-size: 14px;
+        }
+
+        .event-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .event-location {
+            display: flex;
+            align-items: flex-start;
+            gap: 7px;
+            color: #34343a;
+            font-size: 13px;
+            line-height: 1.5;
+            min-height: 20px;
+        }
+
+        .location-icon {
+            color: #ff4770;
+            margin-top: 2px;
+            font-size: 14px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+            margin-top: 7px;
+        }
+
+        .tag {
+            border: 1px solid #222;
+            border-radius: 12px;
+            padding: 3px 9px;
+            font-size: 10px;
+            line-height: 1.2;
+            background: white;
+        }
+
+        .details-link {
+            display: inline-block;
+            color: #111;
+            font-size: 14px;
+            font-weight: 700;
+            text-decoration: none;
+            margin-top: 34px;
+            padding-bottom: 5px;
+            border-bottom: 3px solid #111;
+        }
+
+        .details-link:hover {
+            color: #ff6544;
+            border-color: #ff6544;
+        }
+
+
+        /* =========================
+           LOAD MORE
+        ========================= */
+
+        .load-more-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 48px;
+        }
+
+        .load-more {
+            border: none;
+            background: #ff8500;
+            color: #fff;
+            padding: 10px 19px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,.15);
+        }
+
+        .load-more i {
+            margin-left: 5px;
+        }
+
+        .load-more:hover {
+            background: #f27600;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 1100px) {
+
+            .navbar,
+            main {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+
+            .nav-center {
+                margin-left: 30px;
+            }
+
+            .events-grid {
+                gap: 18px;
+            }
+
+            .event-image {
+                height: 340px;
+            }
+        }
+
+        @media (max-width: 800px) {
+
+            header {
+                height: auto;
+            }
+
+            .navbar {
+                padding: 12px 20px;
+                flex-wrap: wrap;
+                gap: 12px;
+            }
+
+            .nav-center {
+                order: 3;
+                width: 100%;
+                margin-left: 0;
+                justify-content: center;
+            }
+
+            .nav-right {
+                gap: 10px;
+            }
+
+            .events-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .logo {
+                width: 75px;
+            }
+
+            .nav-center {
+                gap: 2px;
+            }
+
+            .nav-item {
+                padding: 9px 17px;
+                font-size: 12px;
+            }
+            .login {
+                display: none;
+            }
+
+            main {
+                padding-top: 30px;
+            }
+
+            .page-title h1 {
+                font-size: 24px;
+            }
+
+            .page-title p {
+                font-size: 12px;
+                line-height: 1.5;
+            }
+
+            .events-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .event-image {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+        <nav class="navbar">
+
+            <!-- Logo -->
+             <div class="container">
+             <a href="Final Project 1.html">
+                <img
+                class="logo"
+                src="./runbodia.webp">
+             </a>
+            </div>
+
+
+            <!-- Navigation -->
+            <div class="nav-center">
+
+                <a href="#123" class="nav-item active">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    Latest
+                </a>
+
+                <a href="sinhoun.html" class="nav-item">
+                    <i class="fa-solid fa-compass"></i>
+                    Browse Events
+                </a>
+
+                <a href="Rach.html" class="recaps">
+                    <i class="fa-solid fa-trophy"></i>
+                    Recaps
+                </a>
+
+            </div>
+
+            <!-- Right navigation -->
+            <div class="nav-right">
+
+                <div class="language">
+                    <span class="active-lang">EN</span>
+                    <span class="other-lang">ខ្មែរ</span>
+                </div>
+
+                <a href="votey.html" class="login">Login</a>
+
+                <a href="houyya.html" class="signup">Sign up</a>
+
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main>
+
+        <!-- Page heading -->
+        <section class="page-title">
+
+            <h1>LATEST EVENTS</h1>
+
+            <div class="title-line"></div>
+
+            <p>
+                Latest events and activities updated regularly.
+                Find and join new events today.
+            </p>
+
+        </section>
+
+
+        <!-- Event cards -->
+        <section class="events-grid">
+
+
+            <!-- ================= EVENT 1 ================= -->
+
+            <article class="event-card">
+
+                <div class="event-image">
+
+                    <img
+                        src="https://storage.runbodia.com/events/images/IMG_2478.JPG"
+                        alt="The Grey 5K"
+                    >
+
+                    <div class="closed-badge">
+                        <i class="fa-solid fa-lock"></i>
+                        Closed
+                    </div>
+
+                </div>
+
+                <div class="event-info">
+
+                    <div class="event-date">
+                        <i class="fa-regular fa-calendar-days calendar-icon"></i>
+                        May 23, 2026 · 5:30 AM–9:30 AM
+                    </div>
+
+                    <h2 class="event-title">
+                        The Grey 5K
+                    </h2>
+
+                    <div class="event-location">
+                        <i class="fa-solid fa-location-dot location-icon"></i>
+                        <span>
+                            Chip Mong 271, Norodom Blvd, Phnom Penh
+                        </span>
+                    </div>
+
+                    <div class="tags">
+                        <span class="tag">Fun Run</span>
+                    </div>
+
+                    <a href="#" class="details-link">
+                        More Details
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ================= EVENT 2 ================= -->
+
+            <article class="event-card">
+
+                <div class="event-image">
+
+                    <img
+                        src="https://storage.runbodia.com/events/images/womens_day_run_resized_full_1280x720.jpg"
+                        alt="Women's Day Run"
+                    >
+
+                    <div class="closed-badge">
+                        <i class="fa-solid fa-lock"></i>
+                        Closed
+                    </div>
+
+                </div>
+
+                <div class="event-info">
+
+                    <div class="event-date">
+                        <i class="fa-regular fa-calendar-days calendar-icon"></i>
+                        Mar 7, 2026 · 6:00 AM–6:00 PM
+                    </div>
+
+                    <h2 class="event-title">
+                        Women's day run
+                    </h2>
+
+                    <div class="event-location">
+                        <i class="fa-solid fa-location-dot location-icon"></i>
+                        <span>
+                            Koh Norea, Phnom Penh
+                        </span>
+                    </div>
+
+                    <div class="tags">
+                        <span class="tag">Fun Run - 3KM</span>
+                        <span class="tag">Road Race</span>
+                    </div>
+
+                    <a href="#" class="details-link">
+                        More Details
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ================= EVENT 3 ================= -->
+
+            <article class="event-card">
+
+                <div class="event-image">
+
+                    <img
+                        src="https://storage.runbodia.com/events/images/Now_is_your_run.jpg"
+                        alt="Now is your run"
+                    >
+
+                    <div class="closed-badge">
+                        <i class="fa-solid fa-lock"></i>
+                        Closed
+                    </div>
+
+                </div>
+
+                <div class="event-info">
+
+                    <div class="event-date">
+                        <i class="fa-regular fa-calendar-days calendar-icon"></i>
+                        Apr 25, 2026 · 6:00 AM–6:00 PM
+                    </div>
+
+                    <h2 class="event-title">
+                        Now is your run
+                    </h2>
+
+                    <div class="event-location">
+                        <i class="fa-solid fa-location-dot location-icon"></i>
+                        <span>
+                            Koh Norea
+                        </span>
+                    </div>
+
+                    <div class="tags">
+                        <span class="tag">Fun Run - 4KM</span>
+                        <span class="tag">Road Race</span>
+                    </div>
+
+                    <a href="#" class="details-link">
+                        More Details
+                    </a>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- Load more -->
+        <div class="load-more-container">
+
+            <button class="load-more">
+                Load All Events
+                <i class="fa-solid fa-arrow-down"></i>
+            </button>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
